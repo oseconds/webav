@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>WebAV - 인터랙티브 미디어 아트</title>
+    
+    <!-- p5.js 라이브러리 -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.6.0/p5.min.js"></script>
+    
+    <!-- Tone.js 라이브러리 -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/tone/14.8.49/Tone.min.js"></script>
+    
+    <!-- 사용자 정의 스타일시트 -->
+    <link rel="stylesheet" href="style.css">
+    
+    <!-- 클래스 파일 -->
+    <script src="Mover.js"></script>
+    
+    <!-- Tone.js 관리 파일 -->
+    <script src="ToneManager.js"></script>
+    
+    <!-- 메인 스케치 파일 -->
+    <script src="sketch.js"></script>
+</head>
+<body>
+    <div id="canvas-container"></div>
+    
+    <div class="controls">
+        <div class="slider-container">
+            <label for="speed-slider">속도</label>
+            <input type="range" id="speed-slider" min="0" max="100" value="50">
+        </div>
+        
+        <div class="slider-container">
+            <label for="density-slider">밀도</label>
+            <input type="range" id="density-slider" min="0" max="100" value="50">
+        </div>
+        
+        <div class="slider-container">
+            <label for="tone-slider">음색</label>
+            <input type="range" id="tone-slider" min="0" max="100" value="50">
+        </div>
+    </div>
+</body>
+</html>

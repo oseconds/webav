@@ -1,0 +1,36 @@
+name: Deploy to GitHub Pages
+
+on:
+  push:
+    branches:
+      - main  # 메인 브랜치에 푸시될 때 실행
+  workflow_dispatch:  # 수동 실행도 가능하도록 설정
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v2
+      
+      # Node.js 설정 (필요한 경우 추가 패키지 설치를 위해)
+      - name: Setup Node.js
+        uses: actions/setup-node@v2
+        with:
+          node-version: '16'
+      
+      # (선택사항) 빌드 단계 - 필요한 경우 주석 해제
+      # - name: Install dependencies
+      #   run: npm install
+      #
+      # - name: Build project
+      #   run: npm run build
+      
+      # GitHub Pages에 배포
+      - name: Deploy to GitHub Pages
+        uses: JamesIves/github-pages-deploy-action@4.1.5
+        with:
+          branch: gh-pages  # 배포할 브랜치
+          folder: .         # 배포할 폴더 (프로젝트 루트)
+          clean: true       # 이전 배포 파일 제거
